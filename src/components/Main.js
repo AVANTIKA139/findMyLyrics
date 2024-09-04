@@ -1,6 +1,8 @@
-import './App.css';
+
 import Axios from 'axios';
 import { useState } from 'react';
+import { GiLoveSong } from "react-icons/gi";
+import { FcSearch } from "react-icons/fc";
 
 function Main() {
     const [artist, setArtist] = useState("");
@@ -18,21 +20,27 @@ function Main() {
         })
     }
 
+    
+
     return (
         <div className="App">
-            <h1>Lyrics Finder ????</h1>
+            <h1>Lyrics Finder <GiLoveSong /> </h1>
 
             <input className="inp" type="text" 
                 placeholder='Artist name'
-                onChange={(e) => { setArtist(e.target.value) }} />
+                onChange={(e) => { setArtist(e.target.value) }} 
+                 />
             <input className="inp" type="text" 
                 placeholder='Song name'
-                onChange={(e) => { setSong(e.target.value) }} />
+                onChange={(e) => { setSong(e.target.value) }}
+                 />
             <button className="btn" 
-                onClick={() => searchLyrics()}>
-                    ???? Search</button>
+            onClick={() => searchLyrics()}
+                >
+                     Search <FcSearch /> </button>
             <hr />
             <pre>{lyrics}</pre>
+        
         </div>
     );
 }
